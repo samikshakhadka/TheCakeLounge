@@ -99,7 +99,14 @@ a:hover { color: var(--gold); }
 .map-wrap { border-radius: 16px; overflow: hidden; border: 1px solid rgba(197,165,114,.25); box-shadow: 0 10px 36px rgba(0,0,0,.5); }
 .map-wrap iframe { width: 100%; height: min(60vh, 520px); filter: grayscale(.15) contrast(1.05) brightness(.95); }
 .contact { text-align: center; margin-top: 1rem; color: #e6d9c5; }
-.cta-wrap { text-align: center; margin-top: 1rem; }
+
+/* Two Maps Layout */
+.maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
+.map-branch { text-align: center; }
+.branch-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: var(--gold); margin-bottom: 1rem; font-weight: 600; }
+.branch-contact { margin-top: 1rem; color: #e6d9c5; }
+.branch-contact p { margin: 0.25rem 0; }
+.cta-wrap { text-align: center; margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .btn { display: inline-block; padding: .65rem 1rem; border-radius: 999px; border: 1px solid rgba(197,165,114,.4); color: var(--beige); background: #131313; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
 .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0,0,0,.35); background: #181818; }
 .btn-order { border-color: var(--gold); color: var(--beige); }
@@ -130,16 +137,28 @@ a:hover { color: var(--gold); }
 .wa-tooltip { position: absolute; right: 70px; bottom: 50%; transform: translateY(50%); background: #141414; color: var(--beige); padding: .45rem .6rem; border-radius: 8px; border: 1px solid rgba(197,165,114,.35); opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease; white-space: nowrap; font-size: .85rem; }
 .whatsapp:hover .wa-tooltip { opacity: 1; transform: translateY(50%) translateX(-4px); }
 
+/* Viber */
+.viber { position: fixed; right: 20px; bottom: 90px; width: 56px; height: 56px; display: inline-grid; place-items: center; border-radius: 50%; background: #1f1f1f; border: 1px solid rgba(197,165,114,.35); box-shadow: 0 10px 30px rgba(0,0,0,.45); z-index: 50; }
+.viber { color: #665CAC; }
+.viber svg { width: 28px; height: 28px; color: inherit; }
+.viber-tooltip { position: absolute; right: 70px; bottom: 50%; transform: translateY(50%); background: #141414; color: var(--beige); padding: .45rem .6rem; border-radius: 8px; border: 1px solid rgba(197,165,114,.35); opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease; white-space: nowrap; font-size: .85rem; }
+.viber:hover .viber-tooltip { opacity: 1; transform: translateY(50%) translateX(-4px); }
+
 /* Responsive */
 @media (max-width: 992px) {
   .grid-2 { grid-template-columns: 1fr; }
   .cards { grid-template-columns: repeat(2, 1fr); }
+  .maps-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
 @media (max-width: 560px) {
   .cards { grid-template-columns: 1fr; }
   .whatsapp { right: 14px; bottom: 14px; width: 52px; height: 52px; }
-  .wa-tooltip { display: none; }
+  .viber { right: 14px; bottom: 80px; width: 52px; height: 52px; }
+  .wa-tooltip, .viber-tooltip { display: none; }
+  .maps-grid { gap: 1rem; }
+  .branch-title { font-size: 1.1rem; }
+  .cta-wrap { flex-direction: column; align-items: center; gap: 0.75rem; }
 }
 
 
